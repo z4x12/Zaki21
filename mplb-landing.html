@@ -127,46 +127,20 @@
   .hero-point .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-500);flex:none;}
 
   .hero-visual{position:relative;}
-  .access-card{
-    background:var(--white);color:var(--ink-900);border-radius:var(--r-lg);
-    padding:28px;box-shadow:var(--shadow-md);border:1px solid rgba(255,255,255,.3);
+  .hero-image{
+    display:block;width:100%;aspect-ratio:4/5;object-fit:cover;
+    border-radius:var(--r-lg);border:1px solid rgba(255,255,255,.14);
+    box-shadow:var(--shadow-md);
   }
-  .access-card__eyebrow{
-    font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
-    color:var(--gold-600);margin-bottom:7px;
+  .hero-image__caption{
+    position:absolute;left:18px;right:18px;bottom:18px;
+    padding:13px 16px;border-radius:12px;background:rgba(11,31,58,.86);
+    color:var(--white);font-size:12.5px;text-align:center;backdrop-filter:blur(8px);
   }
-  .access-card h2{font-size:25px;color:var(--navy-900);margin-bottom:8px;}
-  .access-card__intro{font-size:13.5px;color:var(--ink-600);margin-bottom:20px;}
-  .access-list{display:grid;gap:10px;margin:0 0 24px;padding:0;list-style:none;}
-  .access-list li{
-    display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--ink-600);
-    padding:10px 12px;border-radius:10px;background:var(--gray-50);
-  }
-  .access-list__icon{
-    width:26px;height:26px;border-radius:8px;background:var(--gold-100);color:var(--gold-600);
-    display:flex;align-items:center;justify-content:center;flex:none;font-weight:700;
-  }
-  .login-panel{padding-top:22px;border-top:1px solid var(--gray-100);}
-  .login-panel h3{font-size:17px;color:var(--navy-900);font-weight:700;margin-bottom:17px;}
-  .form-field{margin-bottom:13px;}
-  .form-field label{display:block;font-size:12px;font-weight:600;color:var(--ink-600);margin-bottom:6px;}
-  .form-field input{
-    width:100%;border:1px solid var(--gray-200);border-radius:10px;padding:11px 13px;
-    color:var(--ink-900);background:var(--white);outline:none;font-size:14px;
-  }
-  .form-field input:focus{border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(217,164,65,.14);}
-  .login-panel .btn{width:100%;margin-top:3px;}
-  .login-panel__register{font-size:12.5px;color:var(--ink-600);text-align:center;margin-top:13px;}
-  .login-panel__register a{color:var(--navy-700);font-weight:700;}
-  .form-status{min-height:19px;font-size:12px;color:var(--navy-700);text-align:center;margin-top:10px;}
 
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{max-width:520px;margin:0 auto;width:100%;}
-  }
-  @media (max-width:520px){
-    .access-card{padding:22px;border-radius:18px;}
-    .access-card h2{font-size:22px;}
   }
 
   /* ===== Profil ===== */
@@ -372,18 +346,11 @@
     </div>
 
     <div class="hero-visual">
-      <div class="access-card">
-        <div class="access-card__eyebrow">Daftar akses</div>
-        <h2>Belajar dengan lebih cepat</h2>
-        <p class="access-card__intro">Dapatkan akses ke materi, artikel, dan informasi terbaru jurusan MPLB.</p>
-
-        <ul class="access-list">
-          <li><span class="access-list__icon">✓</span>Artikel dan materi terbaru</li>
-          <li><span class="access-list__icon">✓</span>Informasi kompetensi keahlian</li>
-          <li><span class="access-list__icon">✓</span>Materi berkaitan dengan karier</li>
-          <li><span class="access-list__icon">✓</span>Update kegiatan sekolah</li>
-        </ul>
-      </div>
+      <img
+        class="hero-image"
+        src="SaveClip.App_654139144_18085688381005843_4051165412863507525_n.jpg"
+        alt="Ilustrasi utama mengenai jurusan MPLB"
+      >
     </div>
   </div>
 </section>
