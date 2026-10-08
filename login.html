@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — MPLB</title>
+  <style>
+    :root {
+      --navy-900: #0B1F3A;
+      --navy-700: #14315C;
+      --gold-500: #D9A441;
+      --white: #FFFFFF;
+      --gray-50: #F6F8FA;
+      --gray-200: #DCE3EC;
+      --ink-900: #16212E;
+      --ink-600: #4A5A6E;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--ink-900);
+      background: radial-gradient(circle at 10% 10%, rgba(217,164,65,.16), transparent 30%), linear-gradient(145deg, var(--navy-900), var(--navy-700));
+    }
+    .page { min-height: 100vh; display: grid; place-items: center; padding: 42px 20px; }
+    .login-card {
+      width: min(100%, 470px);
+      padding: 40px;
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 24px 70px rgba(0,0,0,.24);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 28px; color: var(--navy-900); text-decoration: none; }
+    .brand-mark { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 12px; background: var(--navy-900); color: var(--gold-500); font-weight: 800; }
+    .brand strong { display: block; font-size: 17px; }
+    .brand span { display: block; font-size: 11px; color: var(--ink-600); }
+    h1 { margin: 0 0 8px; color: var(--navy-900); font-size: clamp(28px,5vw,36px); }
+    .intro { margin: 0 0 26px; color: var(--ink-600); font-size: 14px; line-height: 1.6; }
+    .form-grid { display: grid; gap: 16px; }
+    .form-field { display: grid; gap: 7px; }
+    .form-field label { font-size: 13px; font-weight: 600; }
+    .form-field input {
+      width: 100%; border: 1px solid var(--gray-200); border-radius: 11px; padding: 12px 14px;
+      color: var(--ink-900); background: var(--gray-50); font: inherit; outline: none;
+    }
+    .form-field input:focus { border-color: var(--gold-500); box-shadow: 0 0 0 3px rgba(217,164,65,.14); }
+    .button {
+      border: 0; border-radius: 999px; padding: 13px 24px; background: var(--gold-500);
+      color: var(--navy-900); font: inherit; font-weight: 700; cursor: pointer;
+    }
+    .form-note { margin: 0; color: var(--ink-600); font-size: 12px; text-align: center; }
+    .form-note a { color: var(--navy-700); font-weight: 700; }
+    .status { min-height: 20px; color: var(--navy-700); font-size: 13px; text-align: center; }
+    @media (max-width: 560px) { .page { padding: 20px 12px; } .login-card { padding: 28px 20px; border-radius: 18px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="login-card" aria-labelledby="login-title">
+      <a class="brand" href="mplb-landing.html">
+        <span class="brand-mark">M</span>
+        <span><strong>MPLB</strong><span>SMKN 1 KAWALI</span></span>
+      </a>
+      <h1 id="login-title">Login akun</h1>
+      <p class="intro">Masukkan akun Anda untuk memperoleh akses ke materi dan informasi terbaru.</p>
+      <form id="loginForm" class="form-grid">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="nama@contoh.com" required>
+        </div>
+        <div class="form-field">
+          <label for="password">Kata sandi</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan kata sandi" minlength="6" required>
+        </div>
+        <button class="button" type="submit">Masuk sekarang</button>
+        <p class="form-note">Belum punya akun? <a href="pendaftaran.html">Daftar sekarang</a></p>
+        <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const formStatus = document.getElementById('formStatus');
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      formStatus.textContent = `Selamat, ${email}. Login berhasil dengan simulasi.`;
+    });
+  </script>
+</body>
+</html>
